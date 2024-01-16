@@ -7,6 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		README.md = README.md
 		LICENSE = LICENSE
 		.gitignore = .gitignore
+		.yarnrc.yml = .yarnrc.yml
+		.prettierrc.json = .prettierrc.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Yarn", "Yarn", "{F02E0A71-2D90-4445-978F-1A171DFDC0BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "releases", "releases", "{DC7D5AD0-6023-4EC0-9745-526C119034FF}"
+	ProjectSection(SolutionItems) = preProject
+		.yarn\releases\yarn-3_7_0.js = .yarn\releases\yarn-3_7_0.js
 	EndProjectSection
 EndProject
 Global
@@ -19,5 +28,9 @@ Global
 		{CCC1A10D-0678-4F8B-8CBF-C428CB64E82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCC1A10D-0678-4F8B-8CBF-C428CB64E82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCC1A10D-0678-4F8B-8CBF-C428CB64E82A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F02E0A71-2D90-4445-978F-1A171DFDC0BC} = {AC8EEE41-4273-4F34-A162-83944985546F}
+		{DC7D5AD0-6023-4EC0-9745-526C119034FF} = {F02E0A71-2D90-4445-978F-1A171DFDC0BC}
 	EndGlobalSection
 EndGlobal
