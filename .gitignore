@@ -406,3 +406,6 @@ FodyWeavers.xsd
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# MacOS DesktopServices Store
+.DS_Store
