@@ -1,0 +1,3 @@
+{
+	"testButton.welcome": "Aujourd'hui c'est {ts, date, ::yyyyMMdd}"
+}

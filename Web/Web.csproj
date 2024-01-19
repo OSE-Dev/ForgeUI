@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <RootNamespace>ForgeUI</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="MediatR.Extensions.FluentValidation.AspNetCore" Version="5.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.0" />
+        <PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="3.1.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="dist\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="dist\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="dist\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="dist\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="locales\en-us\Common.json" />
+      <_ContentIncludedByDefault Remove="locales\fr\Common.json" />
+      <_ContentIncludedByDefault Remove="Messages\locales\en\Common.json" />
+      <_ContentIncludedByDefault Remove="Messages\locales\fr\Common.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Messages\" />
+    </ItemGroup>
+
+</Project>
