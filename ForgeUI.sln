@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "releases", "releases", "{DC
 		.yarn\releases\yarn-3_7_0.js = .yarn\releases\yarn-3_7_0.js
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Test", "Web.Test\Web.Test.csproj", "{FFAE0678-B68F-4F02-9C74-7FB1135A675E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{CCC1A10D-0678-4F8B-8CBF-C428CB64E82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCC1A10D-0678-4F8B-8CBF-C428CB64E82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCC1A10D-0678-4F8B-8CBF-C428CB64E82A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFAE0678-B68F-4F02-9C74-7FB1135A675E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFAE0678-B68F-4F02-9C74-7FB1135A675E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFAE0678-B68F-4F02-9C74-7FB1135A675E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFAE0678-B68F-4F02-9C74-7FB1135A675E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F02E0A71-2D90-4445-978F-1A171DFDC0BC} = {AC8EEE41-4273-4F34-A162-83944985546F}

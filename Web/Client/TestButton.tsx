@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
+import { Button } from "primereact/button";
 import { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 const TestButton = (): React.ReactElement => {
@@ -21,7 +21,7 @@ const TestButton = (): React.ReactElement => {
 			<br />
 			{message}
 			<br />
-			<Button variant="contained">
+			<Button>
 				<FormattedMessage
 					id="testButton.welcome"
 					defaultMessage="Today is {ts, date, ::yyyyMMdd}"
