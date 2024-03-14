@@ -3,24 +3,24 @@ import * as React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 import { type ReactElement } from 'react';
 import Layout from './Layout';
+import Page from "./Page";
+import DemoPage from "./DemoPage";
+import LexicalDemo from "./LexicalDemo";
 const AppRoutes = (): ReactElement => {
 	return (
 		<>
 			<Routes>
 				<Route path="/" element={<Layout />} >
 					<Route index element={<Home />} />
+					<Route path="demo" element={<DemoPage/>} />
 					<Route path="button" element={<TestButton />} />
-					<Route path="test" element={<TestRoute />} />
+					<Route path="lexicaldemo" element={<LexicalDemo />} />
 					<Route path="*" element={<NoMatch />} />
 				</Route>
 			</Routes>
 		</>
 	);
 };
-
-function TestRoute(): ReactElement {
-	return <div>Test Route!</div>;
-}
 
 function Home(): ReactElement {
 	return (

@@ -478,5 +478,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 dist
-.parcel-cache
 .yarn

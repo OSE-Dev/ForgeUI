@@ -14,3 +14,20 @@
   border: unset
   box-shadow: unset
   width: unset
+
+.grid-container
+  display: grid
+  grid-template-columns: auto 1fr
+  grid-template-areas: "sidebar page"
+  grid-template-columns: 150px 500px
+    
+.sidebar
+  outline: red solid 1px
+  grid-area: sidebar
+
+.page
+  outline: blue solid 1px
+  grid-area: page
+
+.lexical-card
+  outline: yellowgreen solid 1px
