@@ -2,33 +2,31 @@ import TestButton from './TestButton';
 import * as React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 import { type ReactElement } from 'react';
-import Layout from './Layout';
+import AppLayout from './AppLayout';
 import Page from "./Page";
 import DemoPage from "./DemoPage";
 import LexicalDemo from "./LexicalDemo";
+import Home from "./Home";
+import MainLayout from "./MainLayout";
+import DndDemoPage from "../DndDemoPage";
 const AppRoutes = (): ReactElement => {
 	return (
 		<>
 			<Routes>
-				<Route path="/" element={<Layout />} >
-					<Route index element={<Home />} />
+                <Route path="/" element={<MainLayout />}>
+                    <Route index element={<Home />} />
+                </Route>
+                <Route path="/app" element={<AppLayout />} >
 					<Route path="demo" element={<DemoPage/>} />
 					<Route path="button" element={<TestButton />} />
 					<Route path="lexicaldemo" element={<LexicalDemo />} />
+                    <Route path="lexicaldnddemo" element={<DndDemoPage/>}/>
 					<Route path="*" element={<NoMatch />} />
 				</Route>
 			</Routes>
 		</>
 	);
 };
-
-function Home(): ReactElement {
-	return (
-		<div>
-			<h2>Home</h2>
-		</div>
-	);
-}
 
 function NoMatch(): ReactElement {
 	return (

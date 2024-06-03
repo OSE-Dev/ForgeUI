@@ -1,10 +1,11 @@
 import * as React from "react";
 import LexicalCard from "./LexicalCard";
+import {v4 as uuidv4} from "uuid";
 const LexicalDemo = () =>{
 
     return (
         <div >
-            <LexicalCard key={"1"} id={"1"} content={""}/>
+            <LexicalCard props={{id: uuidv4(), key: uuidv4(), content:""}} removeCard={()=> {}} />
         </div>
     );
 };

@@ -13,7 +13,8 @@ App Startup
 - Start the app by using the `Run ForgeUI` run configuration (if on Rider) or run `yarn start` from the `Web` directory
 
 Development Notes
-- Use FormattedMessage component for all user facing text, and be sure to run extract script when any new ones are added
+- Use FormattedMessage component for all user facing text, and be sure to run `yarn extract` when any new ones are added
+- Text editing gadgets use [Lexical](lexical.dev) under the hood, which has some compatibility issues with some browsers. Chrome is recommended.
 
 Troubleshooting
 - If you receive a warning containing `Implicit dependencies on node-gyp are discouraged` when running `yarn install`, you can ignore it per [this comment](https://github.com/yarnpkg/yarn/issues/8052#issuecomment-735764698)

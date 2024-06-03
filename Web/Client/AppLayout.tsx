@@ -2,13 +2,14 @@ import * as React from "react";
 import {Link, Outlet} from "react-router-dom";
 import { Menubar } from 'primereact/menubar';
 
-const Layout = (): React.ReactElement => {
+const AppLayout = (): React.ReactElement => {
 
     const items = [
         {
-            label: 'File',
-            icon: 'pi pi-fw pi-file '
-        }];
+            label: 'Home',
+            icon: 'pi pi-home',
+            url: '/'
+        },];
     return (
         <>
             <Menubar model={items}/>
@@ -17,4 +18,4 @@ const Layout = (): React.ReactElement => {
     );
 };
 
-export default Layout;
+export default AppLayout;

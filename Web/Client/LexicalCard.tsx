@@ -9,6 +9,19 @@ import {OnChangePlugin} from '@lexical/react/LexicalOnChangePlugin';
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
 import {RichTextPlugin} from "@lexical/react/LexicalRichTextPlugin";
+import {LinkPlugin} from "@lexical/react/LexicalLinkPlugin";
+import {TablePlugin} from "@lexical/react/LexicalTablePlugin";
+import {ListPlugin} from "@lexical/react/LexicalListPlugin";
+import {CheckListPlugin} from "@lexical/react/LexicalCheckListPlugin";
+import {TabIndentationPlugin} from "@lexical/react/LexicalTabIndentationPlugin";
+import {AutoLinkPlugin} from "@lexical/react/LexicalAutoLinkPlugin";
+import {ClearEditorPlugin} from "@lexical/react/LexicalClearEditorPlugin";
+import {MarkdownShortcutPlugin} from "@lexical/react/LexicalMarkdownShortcutPlugin";
+import LexicalTableOfContentsPlugin from "@lexical/react/LexicalTableOfContents";
+import {AutoLinkNode, LinkNode} from '@lexical/link';
+import {ListItemNode, ListNode} from '@lexical/list';
+import ToolbarPlugin from './ToolbarPlugin'
+import {AutoFocusPlugin} from "@lexical/react/LexicalAutoFocusPlugin";
 
 type Props = {
     key: string;
@@ -16,7 +29,7 @@ type Props = {
     content:string;
 }
 
-const LexicalCard = (props: Props) => {
+const LexicalCard = ({props, removeCard, className, style = {}, children, ...otherProps}: {props:Props, removeCard:(id:string)=>void, className?: string, key?: string, style?: {[x:string] : string}, children?: React.ReactNode[] }) => {
     const theme = {
     }
 
@@ -25,23 +38,16 @@ const LexicalCard = (props: Props) => {
     // try to recover gracefully without losing user data.
     function onError(error: Error) {
         console.error(error);
+        throw error;
     }
 
     const initialConfig = {
         namespace: 'MyEditor',
         theme,
         onError,
+        nodes: []
+        // nodes: [AutoLinkNode, ListNode, ListItemNode]
     };
-
-    function MyOnChangePlugin({ onChange = (editorState : EditorState) => {} }) {
-        const [editor] = useLexicalComposerContext();
-        useEffect(() => {
-            return editor.registerUpdateListener(({editorState}) => {
-                onChange(editorState);
-            });
-        }, [editor, onChange]);
-        return null;
-    }
 
 
     const [editorState, setEditorState] = useState<string>("");
@@ -52,17 +58,60 @@ const LexicalCard = (props: Props) => {
         setEditorState(JSON.stringify(editorStateJSON));
     }
 
+    const URL_MATCHER =
+        /((https?:\/\/(www\.)?)|(www\.))[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/;
+
+    const MATCHERS = [
+        (text : string) => {
+            const match = URL_MATCHER.exec(text);
+            if (match === null) {
+                return null;
+            }
+            const fullMatch = match[0];
+            return {
+                index: match.index,
+                length: fullMatch.length,
+                text: fullMatch,
+                url: fullMatch.startsWith('http') ? fullMatch : `https://${fullMatch}`,
+                // attributes: { rel: 'noreferrer', target: '_blank' }, // Optional link attributes
+            };
+        },
+    ];
+
     return (
-        <div className={"lexical-card"} key={props.key} id={props.id} >
-            <LexicalComposer initialConfig={initialConfig}>u
-                <RichTextPlugin
-                    contentEditable={<ContentEditable/>}
-                    placeholder={<div>Enter some text...</div>}
-                    ErrorBoundary={LexicalErrorBoundary}
-                />
-                <HistoryPlugin/>
-                <MyOnChangePlugin onChange={onChange}/>
+        <div id={props?.id}>
+        {/*<div {...otherProps} style={{...style}} className={`lexical-card-container lexical-card ${className}`} id={props?.id} >*/}
+            <div className={"component-header"}>
+            <span className={"pi pi-arrows-alt drag-handle"} ></span>
+            <button onClick={() => removeCard(props.id)}>
+                <span className={"pi pi-trash"}></span>
+            </button>
+            </div>
+            <LexicalComposer initialConfig={initialConfig}>
+                <div className="editor-container">
+                    <ToolbarPlugin />
+                    <div className="editor-inner">
+                        <RichTextPlugin
+                            contentEditable={<ContentEditable className={"editor-input"}/>}
+                            placeholder={<div className={"editor-placeholder"}>Enter some text...</div>}
+                            ErrorBoundary={LexicalErrorBoundary}
+                        />
+                        <HistoryPlugin/>
+                        <AutoFocusPlugin />
+                        {/*<OnChangePlugin onChange={onChange}/>*/}
+                        {/*/!*<LinkPlugin />*!/*/}
+                        {/*<ListPlugin />*/}
+                        {/*/!*<CheckListPlugin />*!/*/}
+                        {/*/!*<TablePlugin />*!/*/}
+                        {/*/!*<TabIndentationPlugin />*!/*/}
+                        {/*<AutoLinkPlugin matchers={MATCHERS} />*/}
+                        {/*<ClearEditorPlugin/>*/}
+                        {/*<MarkdownShortcutPlugin/>*/}
+                    </div>
+                </div>
             </LexicalComposer>
+        {/*    {children}*/}
+        {/*</div>*/}
         </div>
     );
 }

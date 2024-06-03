@@ -6,41 +6,43 @@ import {useState} from "react";
 import {Card} from "primereact/card";
 import LexicalCard from "./LexicalCard";
 const ResponsiveGridLayout= WidthProvider(Responsive);
-
+import { useResizeDetector } from 'react-resize-detector';
 const Page = () =>{
-    const layout = [
-        { i: "a", x: 0, y: 0, w: 1, h: 2 },
-        { i: "b", x: 1, y: 0, w: 3, h: 2 },
-        { i: "c", x: 4, y: 0, w: 1, h: 2 }
-    ];
-    
-    
+    const {width, height, ref} = useResizeDetector();
     const [cards, setCards] = useState<cardContent[]>([]);
     
     function addCard(){
-        let newCard : cardContent= {id: uuidv4(), content:""};
+        let newCard : cardContent= {id: uuidv4(), key: uuidv4(), content:"", position:{x:0,y:0}};
         setCards([...cards, newCard]);
     }
     
+    function removeCard(id : string){
+        const filteredCards = cards.filter(x => x.id != id);
+        setCards([...filteredCards]);
+    }
+    
     return (
-        <div className="grid-container">
+        <div className="grid-container" ref={ref}>
             <Toolbox addCard={addCard}/>
             <ResponsiveGridLayout
                 className={"page layout"}
-                layouts={{lg:layout}}
                 cols={{lg:50, md: 30, sm: 20, xs: 5, xxs: 5}}
-                rowHeight={30}
-                width={1000}
+                rowHeight={100}
                 allowOverlap={true}
                 isDroppable={true}
                 isResizable={true}
-                compactType={null}
+                // compactType={null}
                 resizeHandles={['s', 'se']}
                 onLayoutChange={(currentLayout, allLayouts) => console.log(allLayouts)}
+                draggableHandle={".drag-handle"}
                 >
-                {/*{cards.map((card) => <Card key={card.id} id={card.id} content={card.content} />)}*/}
-                {cards.map((card) => (<div key={card.id} id={card.id}><LexicalCard key={card.id} id={card.id} content={card.content}/></div>))}
-                {/*{cards.map((card) => <div className={"lexical-card"} key={card.id} id={card.id} content={card.content}/>)}*/}
+                {cards.map((card) => (
+                    <div className={"lexical-card-container"} data-grid={{x: 0, y: 0, w: 13, h: 1, minW: 4, minH: 2}} key={card.key} id={card.id}>
+                        <LexicalCard  props={card} removeCard={removeCard}/>
+                    </div>
+                    )
+                )
+                }
             </ResponsiveGridLayout>
         </div>
     );

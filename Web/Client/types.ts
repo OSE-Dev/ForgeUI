@@ -1,4 +1,9 @@
 type cardContent = {
-    id:string
-    content:string
+    id:string,
+    key:string,
+    content:string,
+    position: {
+        x: number,
+        y: number
+    }
 }
