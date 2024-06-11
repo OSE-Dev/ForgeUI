@@ -27,6 +27,7 @@ type Props = {
     key: string;
     id: string;
     content:string;
+    height?:string;
 }
 
 const LexicalCard = ({props, removeCard, className, style = {}, children, ...otherProps}: {props:Props, removeCard:(id:string)=>void, className?: string, key?: string, style?: {[x:string] : string}, children?: React.ReactNode[] }) => {
@@ -79,7 +80,7 @@ const LexicalCard = ({props, removeCard, className, style = {}, children, ...oth
     ];
 
     return (
-        <div id={props?.id}>
+        <div id={props?.id} className={"lexical-card-rnd"}>
         {/*<div {...otherProps} style={{...style}} className={`lexical-card-container lexical-card ${className}`} id={props?.id} >*/}
             <div className={"component-header"}>
             <span className={"pi pi-arrows-alt drag-handle"} ></span>
@@ -90,7 +91,7 @@ const LexicalCard = ({props, removeCard, className, style = {}, children, ...oth
             <LexicalComposer initialConfig={initialConfig}>
                 <div className="editor-container">
                     <ToolbarPlugin />
-                    <div className="editor-inner">
+                    <div className="editor-inner" style={{height: props.height}}>
                         <RichTextPlugin
                             contentEditable={<ContentEditable className={"editor-input"}/>}
                             placeholder={<div className={"editor-placeholder"}>Enter some text...</div>}

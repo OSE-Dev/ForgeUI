@@ -18,6 +18,10 @@ const Home = (): ReactElement => {
             Click <Link to={"./app/lexicaldemo"}>here</Link> to go to Lexical demo
             <br />
             Click <Link to={"./app/lexicaldnddemo"}>here</Link> to go to Dndkit Lexical demo
+            <br />
+            Click <Link to={"./app/ResizableDemo"}>here</Link> to go to Resizable demo            
+            <br />
+            Click <Link to={"./app/ReactRndDemo"}>here</Link> to go to RND demo
         </div>
     );
 }

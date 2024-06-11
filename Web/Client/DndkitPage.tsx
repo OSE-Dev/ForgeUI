@@ -17,6 +17,7 @@ import {DndContext} from "@dnd-kit/core";
 import {DroppableDemo} from "./DroppableDemo";
 import {DraggableDemo} from "./DraggableDemo";
 import {Coordinates} from "@dnd-kit/utilities";
+import { Resizable } from 'react-resizable';
 
 const DndkitPage = () =>{
     const [cards, setCards] = useState<cardContent[]>([]);
@@ -47,10 +48,26 @@ const DndkitPage = () =>{
         
         setCards(_cards);
     }
-    
+    const [dimensions, setDimensions] = useState({width: 300, height: 300});
+    const onResize = (event:any, {node, size, handle}:{node:any, size:any, handle:any})  => {
+        setDimensions({width: size.width, height: size.height});
+    };
+
+    const [width, setWidth] = React.useState(200);
+
+    const [height, setHeight] = React.useState(200);
     return (
         <>
             <Toolbox addCard={addCard}/>
+            <Resizable
+                width={width}
+                height={height}
+                onResize={(event:any, {element, size}:{element:any, size:any}) => {
+                    setWidth(size.width);
+                    setHeight(size.height);
+                }}>
+                <h1>Hello, world!</h1>
+            </Resizable>
             <DndContext onDragEnd={handleDragEnd}>
                     {/*<DroppableDemo>*/}
                         {cards.map((card) => (
