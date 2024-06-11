@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "yarn@4.3.0",
   "scripts": {
     "start": "vite --host",
     "lint": "eslint . --fix --max-warnings=0",
