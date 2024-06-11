@@ -6,8 +6,6 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import './App.sass'
-import 'react-grid-layout/css/styles.css'
-import 'react-resizable/css/styles.css'
 
 const container = document.getElementById('app');
 
