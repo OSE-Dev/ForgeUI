@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { type ReactElement } from 'react';
 import { IntlProvider } from 'react-intl';
-import AppRoutes from './AppRoutes';
+import AppRoutes from './app-routes';
 
 export function App(): ReactElement {
 	return (

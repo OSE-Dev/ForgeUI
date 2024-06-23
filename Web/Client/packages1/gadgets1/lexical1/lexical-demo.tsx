@@ -1,5 +1,5 @@
 import * as React from "react";
-import LexicalCard from "./LexicalCard";
+import LexicalCard from "./lexical-card";
 import {v4 as uuidv4} from "uuid";
 const LexicalDemo = () =>{
 

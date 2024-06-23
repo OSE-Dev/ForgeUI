@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 import { type ReactElement } from 'react';
-import AppLayout from './AppLayout';
+import AppLayout from './app-layout';
 import LexicalDemo from "../Gadgets/Lexical/LexicalDemo";
-import MainLayout from "./MainLayout";
+import MainLayout from "./main-layout";
 import ReactRndDemo from "../ContentEditor/ReactRndDemo";
 import Home from "../HomePage/Home";
 const AppRoutes = (): ReactElement => {
