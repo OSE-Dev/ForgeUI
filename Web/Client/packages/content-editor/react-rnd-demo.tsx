@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {v4 as uuidv4} from "uuid";
-import Toolbox from "./toolbox1";
+import Toolbox from "./toolbox";
 import RNDComponent from "./rnd-component";
 const ReactRndDemo = () => {
     const [cards, setCards] = useState<cardContent[]>([]);
