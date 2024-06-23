@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Rnd} from "react-rnd";
-import LexicalCard from "../Gadgets/Lexical/LexicalCard";
+import LexicalCard from "../gadgets/lexical/lexical-card";
 
 const RNDComponent = ({card}:{card:cardContent}) => {
     const [dimensions, setDimensions] = useState({
