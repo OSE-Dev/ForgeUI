@@ -2,6 +2,9 @@
   "name": "web",
   "packageManager": "yarn@4.3.0",
   "type": "module",
+  "workspaces": [
+    "Client/Packages/**/*"
+  ],
   "scripts": {
     "start": "vite --host",
     "lint": "eslint . --fix --max-warnings=0",
@@ -16,11 +19,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@lexical/react": "^0.16.0",
     "axios": "^1.7.2",
     "eslint-plugin-jest": "^28.6.0",
     "i": "^0.3.7",
-    "lexical": "^0.16.0",
     "npm": "^10.8.1",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
@@ -28,11 +29,9 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-intl": "^6.6.8",
-    "react-rnd": "^10.4.11",
     "react-router": "^6.23.1",
     "react-router-dom": "^6.23.1",
-    "typescript": "^5.4.5",
-    "uuid": "^10.0.0"
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.7",
@@ -44,7 +43,6 @@
     "@types/jest": "^29.5.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.13.0",
     "@typescript-eslint/parser": "^7.13.0",
     "@vitejs/plugin-react-swc": "^3.7.0",

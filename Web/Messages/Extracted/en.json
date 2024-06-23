@@ -1,6 +1,0 @@
-{
-	"testButton.welcome": {
-		"defaultMessage": "Today is {ts, date, ::yyyyMMdd}",
-		"description": "Welcome text on test button"
-	}
-}

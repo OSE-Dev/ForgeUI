@@ -40,9 +40,4 @@
       <_ContentIncludedByDefault Remove="Messages\locales\fr\Common.json" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Client\Lexical\Nodes\" />
-      <Folder Include="Messages\" />
-    </ItemGroup>
-
 </Project>

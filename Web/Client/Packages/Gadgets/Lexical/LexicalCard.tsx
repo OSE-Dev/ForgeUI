@@ -20,7 +20,7 @@ import {MarkdownShortcutPlugin} from "@lexical/react/LexicalMarkdownShortcutPlug
 import LexicalTableOfContentsPlugin from "@lexical/react/LexicalTableOfContents";
 import {AutoLinkNode, LinkNode} from '@lexical/link';
 import {ListItemNode, ListNode} from '@lexical/list';
-import ToolbarPlugin from './ToolbarPlugin'
+import ToolbarPlugin from '../../App/ToolbarPlugin'
 import {AutoFocusPlugin} from "@lexical/react/LexicalAutoFocusPlugin";
 
 type Props = {

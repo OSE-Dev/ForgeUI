@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import {Rnd} from "react-rnd";
-import LexicalCard from "./LexicalCard";
 import {v4 as uuidv4} from "uuid";
 import Toolbox from "./Toolbox";
 import RNDComponent from "./RNDComponent";

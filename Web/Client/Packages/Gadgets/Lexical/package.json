@@ -1,0 +1,13 @@
+{
+  "name": "lexical",
+  "packageManager": "yarn@4.3.0",
+  "type": "module",
+  "dependencies": {
+    "@lexical/react": "^0.16.0",
+    "lexical": "^0.16.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.8"
+  }
+}
