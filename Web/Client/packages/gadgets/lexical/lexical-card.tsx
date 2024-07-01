@@ -20,9 +20,9 @@ import {MarkdownShortcutPlugin} from "@lexical/react/LexicalMarkdownShortcutPlug
 import LexicalTableOfContentsPlugin from "@lexical/react/LexicalTableOfContents";
 import {AutoLinkNode, LinkNode} from '@lexical/link';
 import {ListItemNode, ListNode} from '@lexical/list';
-import ToolbarPlugin from '../../app/toolbar-plugin'
+import ToolbarPlugin from './toolbar-plugin'
 import {AutoFocusPlugin} from "@lexical/react/LexicalAutoFocusPlugin";
-
+import './lexical.sass'
 type Props = {
     key: string;
     id: string;
@@ -30,7 +30,7 @@ type Props = {
     height?:string;
 }
 
-const LexicalCard = ({props, removeCard, className, style = {}, children, ...otherProps}: {props:Props, removeCard:(id:string)=>void, className?: string, key?: string, style?: {[x:string] : string}, children?: React.ReactNode[] }) => {
+const LexicalCard = ({props, removeCard, className, style = {}, children, ...otherProps}: {props:Props, removeCard:(key:string)=>void, className?: string, key?: string, style?: {[x:string] : string}, children?: React.ReactNode[] }) => {
     const theme = {
     }
 
@@ -80,13 +80,13 @@ const LexicalCard = ({props, removeCard, className, style = {}, children, ...oth
     ];
 
     return (
-        <div id={props?.id} className={"lexical-card-rnd"}>
+        <div className={"lexical-card-rnd"}>
         {/*<div {...otherProps} style={{...style}} className={`lexical-card-container lexical-card ${className}`} id={props?.id} >*/}
             <div className={"component-header"}>
-            <span className={"pi pi-arrows-alt drag-handle"} ></span>
-            <button onClick={() => removeCard(props.id)}>
-                <span className={"pi pi-trash"}></span>
-            </button>
+                {/*<span className={"pi pi-arrows-alt drag-handle"} ></span>*/}
+                <button onClick={() => removeCard(props.key)}>
+                    <span className={"pi pi-trash"}></span>
+                </button>
             </div>
             <LexicalComposer initialConfig={initialConfig}>
                 <div className="editor-container">

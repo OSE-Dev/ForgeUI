@@ -5,7 +5,7 @@ import 'primereact/resources/themes/mdc-dark-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
-import './App.sass'
+import './app.sass'
 
 const container = document.getElementById('app');
 

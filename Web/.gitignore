@@ -481,3 +481,5 @@ FodyWeavers.xsd
 
 dist
 .yarn
+
+*storybook.log

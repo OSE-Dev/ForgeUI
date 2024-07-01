@@ -2,23 +2,15 @@ import React, {useState} from 'react';
 import {Rnd} from "react-rnd";
 import LexicalCard from "../gadgets/lexical/lexical-card";
 
-const RNDComponent = ({card}:{card:cardContent}) => {
+const RNDComponent = ({card, removeCard}:{card:cardContent, removeCard: (key:string) => void}) => {
     const [dimensions, setDimensions] = useState({
-        width: 200,
+        width: 400,
         height: 200,
         x: 10,
         y: 10,
     });
-    
-    function removeCard(id : string){
-        const [cards, setCards] = useState<cardContent[]>([]);
-        const filteredCards = cards.filter(x => x.id != id);
-        setCards([...filteredCards]);
-    }
-    
-    
+
     return (
-    <>
         <Rnd
             size={{ width: dimensions.width, height: dimensions.height }}
             position={{ x: dimensions.x, y: dimensions.y }}
@@ -34,10 +26,8 @@ const RNDComponent = ({card}:{card:cardContent}) => {
             }}
             className={"rnddemo"}
         >
-            <LexicalCard props={{id:card.id, key:card.id, content:"", height:dimensions.height-90+"px"}} removeCard={removeCard}/>
-
+            <LexicalCard props={{id:card.id, key:card.key, content:"", height:dimensions.height-90+"px"}} removeCard={removeCard}/>
         </Rnd>
-    </>
     );
 }
 

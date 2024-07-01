@@ -27,6 +27,8 @@
 
     <ItemGroup>
       <Content Remove="dist\**" />
+      <Content Include=".storybook\main.js" />
+      <Content Include=".storybook\preview.js" />
     </ItemGroup>
 
     <ItemGroup>

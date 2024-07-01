@@ -20,99 +20,22 @@
   
 .component-header
   display: flex
-  justify-content: space-between
+  justify-content: right
   padding-bottom: 5px 
-
-.grid-container
-  display: grid
-  grid-template-areas: "sidebar page"
-  grid-template-columns: 1fr 24fr
-  grid-template-rows: 1fr 24fr
 
 .sidebar
   outline: red solid 1px
-  grid-area: sidebar
   position: sticky
   top: 77px
 
 .page
   outline: blue solid 1px
-  grid-area: page
   min-height: 90vh
   top: 0
   resize: both
   overflow: auto
   display: inline-block
   
-  
-.lexical-card-container
-  outline: #ec28ae solid 1px
-  background-color: rgba(153, 23, 178, 0.81)
-  overflow: auto
-  padding: 5px
-  //min-height: 250px
-  
-.lexical-card-rnd
-   outline: #ec28ae solid 1px
-   background-color: rgba(153, 23, 178, 0.81)
-   overflow: auto
-   padding: 5px
-   //height: auto
-   
-.editor-input
-  //min-height: 150px
-  resize: both
-  font-size: 15px
-  caret-color: rgb(5, 5, 5)
-  position: relative
-  tab-size: 1
-  outline: 0
-  padding: 15px 10px
-
-.editor-placeholder
-  color: #999
-  overflow: hidden
-  position: absolute
-  top: 15px
-  left: 15px
-  user-select: none
-  pointer-events: none
-  padding-top: 14px
-
-.editor-container
-  margin: 2px 5px 5px 5px
-  border-radius: 2px
-  //max-width: 1000px
-  color: #000
-  position: relative
-  line-height: 20px
-  font-weight: 400
-  text-align: left
-
-
-.editor-inner
-  background: #fff
-  position: relative
-
-.editor-text-bold
-  font-weight: bold
-
-
-.editor-text-italic
-  font-style: italic
-
-
-.editor-text-underline
-  text-decoration: underline
-
-
-.editor-text-strikethrough
-  text-decoration: line-through
-
-
-.editor-text-underlineStrikethrough
-  text-decoration: underline line-through
-
 .toolbar
   display: flex
   margin-bottom: 1px
@@ -121,7 +44,6 @@
   border-top-left-radius: 10px
   border-top-right-radius: 10px
   vertical-align: middle
-
 
 .toolbar button.toolbar-item
   border: 0
@@ -132,14 +54,11 @@
   cursor: pointer
   vertical-align: middle
 
-
 .toolbar button.toolbar-item:disabled
   cursor: not-allowed
 
-
 .toolbar button.toolbar-item.spaced
   margin-right: 2px
-
 
 .toolbar button.toolbar-item i.format
   background-size: contain
@@ -150,28 +69,22 @@
   vertical-align: -0.25em
   opacity: 0.6
 
-
 .toolbar button.toolbar-item:disabled i.format
   opacity: 0.2
-
 
 .toolbar button.toolbar-item.active
   background-color: rgba(223, 232, 250, 0.3)
 
-
 .toolbar button.toolbar-item.active i
   opacity: 1
 
-
 .toolbar .toolbar-item:hover:not([disabled])
   background-color: #eee
-
 
 .toolbar .divider
   width: 1px
   background-color: #eee
   margin: 0 4px
-
 
 .toolbar .toolbar-item .text
   display: flex
@@ -185,7 +98,6 @@
   height: 20px
   text-align: left
 
-
 .toolbar .toolbar-item .icon
   display: flex
   width: 20px
@@ -195,45 +107,33 @@
   line-height: 16px
   background-size: contain
 
-
 i.undo
-  background-image: url(icons/arrow-counterclockwise.svg)
-
+  background-image: url(../../icons/arrow-counterclockwise.svg)
 
 i.redo
-  background-image: url(icons/arrow-clockwise.svg)
-
+  background-image: url(../../icons/arrow-clockwise.svg)
 
 i.bold
-  background-image: url(icons/type-bold.svg)
-
+  background-image: url(../../icons/type-bold.svg)
 
 i.italic
-  background-image: url(icons/type-italic.svg)
-
+  background-image: url(../../icons/type-italic.svg)
 
 i.underline
-  background-image: url(icons/type-underline.svg)
-
+  background-image: url(../../icons/type-underline.svg)
 
 i.strikethrough
-  background-image: url(icons/type-strikethrough.svg)
-
+  background-image: url(../../icons/type-strikethrough.svg)
 
 i.left-align
-  background-image: url(icons/text-left.svg)
-
+  background-image: url(../../icons/text-left.svg)
 
 i.center-align
-  background-image: url(icons/text-center.svg)
-
+  background-image: url(../../icons/text-center.svg)
 
 i.right-align
-  background-image: url(icons/text-right.svg)
-
+  background-image: url(../../icons/text-right.svg)
 
 i.justify-align
-  background-image: url(icons/justify.svg)
+  background-image: url(../../icons/justify.svg)
 
-.rnddemo
-  background-color: blueviolet
