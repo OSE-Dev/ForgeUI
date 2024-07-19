@@ -13,9 +13,13 @@ const Home = (): ReactElement => {
                     description="Welcome text on home page"
                 />
             </h1>
-            Click <Link to={"./app/lexicaldemo"}>here</Link> to go to Lexical demo
+            <div>
+                Click <Link to={"./app/lexicaldemo"}>here</Link> to go to Lexical demo
+            </div>    
             <br />
-            Click <Link to={"./app/ReactRndDemo"}>here</Link> to go to RND demo
+            <div>
+                Click <Link to={"./app/ReactRndDemo"}>here</Link> to go to RND demo
+            </div>
         </div>
     );
 }
