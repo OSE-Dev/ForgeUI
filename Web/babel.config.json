@@ -1,5 +1,5 @@
 {
-	"presets": [],
+	"presets": [ "@babel/preset-typescript" ],
 	"plugins": [
 		[
 			"formatjs",
@@ -8,5 +8,7 @@
 				"ast": true
 			}
 		]
-	]
+	],
+  "sourceType": "module",
+  "sourceMap": true
 }

@@ -27,8 +27,8 @@
 
     <ItemGroup>
       <Content Remove="dist\**" />
-      <Content Include=".storybook\main.js" />
-      <Content Include=".storybook\preview.js" />
+      <TypeScriptCompile Include=".storybook\main.ts" />
+      <TypeScriptCompile Include=".storybook\preview.tsx" />
     </ItemGroup>
 
     <ItemGroup>
@@ -40,10 +40,15 @@
       <_ContentIncludedByDefault Remove="locales\fr\Common.json" />
       <_ContentIncludedByDefault Remove="Messages\locales\en\Common.json" />
       <_ContentIncludedByDefault Remove="Messages\locales\fr\Common.json" />
+      <_ContentIncludedByDefault Remove="Client\packages\test11\package.json" />
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Client\packages\app\tests\" />
+      <Folder Include="Client\packages\content-editor\tests\" />
+      <Folder Include="Client\packages\gadgets\lexical\tests\" />
       <Folder Include="Client\packages\home-page\tests\" />
+      <Folder Include="Tests\" />
     </ItemGroup>
 
 </Project>

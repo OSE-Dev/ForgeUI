@@ -22,7 +22,7 @@ import {AutoLinkNode, LinkNode} from '@lexical/link';
 import {ListItemNode, ListNode} from '@lexical/list';
 import ToolbarPlugin from './toolbar-plugin'
 import {AutoFocusPlugin} from "@lexical/react/LexicalAutoFocusPlugin";
-import './lexical.sass'
+
 type Props = {
     key: string;
     id: string;
