@@ -8156,9 +8156,11 @@ __metadata:
   dependencies:
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
+    primereact: "npm:^10.7.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-intl: "npm:^6.6.8"
+    react-router-dom: "npm:^6.25.1"
   languageName: unknown
   linkType: soft
 

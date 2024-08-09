@@ -10,6 +10,7 @@ export default meta;
 type Story = StoryObj<typeof AppLayout>;
 
 export const Primary: Story = {
-    args: {
+    parameters: {
+        storyType: ''
     },
 };

@@ -1,0 +1,16 @@
+import { Meta, StoryObj } from '@storybook/react';
+
+import {{name}} from './{{name}}';
+
+const meta: Meta<typeof {{name}}> = {
+    component: {{name}},
+};
+
+export default meta;
+type Story = StoryObj<typeof {{name}}>;
+
+export const Primary: Story = {
+    parameters: {
+        storyType: '' // type "page" will include necessary app context providers, empty/default has none
+    },
+};
