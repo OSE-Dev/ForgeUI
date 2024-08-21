@@ -6958,6 +6958,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-react-hooks@npm:^4.6.2":
+  version: 4.6.2
+  resolution: "eslint-plugin-react-hooks@npm:4.6.2"
+  peerDependencies:
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+  checksum: 10/5a0680941f34e70cf505bcb6082df31a3e445d193ee95a88ff3483041eb944f4cefdaf7e81b0eb1feb4eeceee8c7c6ddb8a2a6e8c4c0388514a42e16ac7b7a69
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-react@npm:^7.34.4":
   version: 7.34.4
   resolution: "eslint-plugin-react@npm:7.34.4"
@@ -14041,6 +14050,7 @@ __metadata:
     eslint-plugin-n: "npm:^17.9.0"
     eslint-plugin-promise: "npm:^6.5.0"
     eslint-plugin-react: "npm:^7.34.4"
+    eslint-plugin-react-hooks: "npm:^4.6.2"
     eslint-plugin-storybook: "npm:^0.8.0"
     husky: "npm:^9.1.1"
     i: "npm:^0.3.7"

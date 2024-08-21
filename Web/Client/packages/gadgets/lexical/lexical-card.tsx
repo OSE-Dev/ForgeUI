@@ -22,6 +22,7 @@ import {AutoLinkNode, LinkNode} from '@lexical/link';
 import {ListItemNode, ListNode} from '@lexical/list';
 import ToolbarPlugin from './toolbar-plugin'
 import {AutoFocusPlugin} from "@lexical/react/LexicalAutoFocusPlugin";
+import { Card } from "primereact/card";
 
 type Props = {
     key: string;
@@ -80,7 +81,7 @@ const LexicalCard = ({props, removeCard, className, style = {}, children, ...oth
     ];
 
     return (
-        <div className={"lexical-card-rnd"}>
+        <Card className={"lexical-card-rnd"}>
         {/*<div {...otherProps} style={{...style}} className={`lexical-card-container lexical-card ${className}`} id={props?.id} >*/}
             <div className={"component-header"}>
                 {/*<span className={"pi pi-arrows-alt drag-handle"} ></span>*/}
@@ -113,7 +114,7 @@ const LexicalCard = ({props, removeCard, className, style = {}, children, ...oth
             </LexicalComposer>
         {/*    {children}*/}
         {/*</div>*/}
-        </div>
+        </Card>
     );
 }
 

@@ -48,6 +48,7 @@
       <Folder Include="Client\packages\content-editor\tests\" />
       <Folder Include="Client\packages\gadgets\lexical\tests\" />
       <Folder Include="Client\packages\home-page\tests\" />
+      <Folder Include="Public\Themes\" />
       <Folder Include="Tests\" />
     </ItemGroup>
 

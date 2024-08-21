@@ -1,19 +1,31 @@
 import * as React from "react";
-import {Link, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
+import { useEffect } from "react";
 import { Menubar } from 'primereact/menubar';
+import Footer from "./Footer";
+import MenubarEnd from "./MenubarEnd";
+import useSwitchTheme from "./useSwitchTheme";
+
 
 const AppLayout = (): React.ReactElement => {
-
-    const items = [
+    const { loadSavedTheme } = useSwitchTheme();
+    useEffect(()=>{
+        loadSavedTheme();
+    },[])
+    
+    const modelItems = [
         {
             label: 'Home',
             icon: 'pi pi-home',
             url: '/'
-        },];
+        },
+    ];
+
     return (
         <>
-            <Menubar model={items}/>
+            <Menubar model={modelItems} end={<MenubarEnd/>}/>
             <Outlet />
+            <Footer />
         </>
     );
 };

@@ -1,12 +1,51 @@
+body
+  margin: 0
+
+.app-wrapper
+  width: 800px
+  justify-content: center
+  
+.dev-menu
+  align-content: center
+  cursor: pointer
+  
+.p-menubar
+  border: 0
+  background-color: var(--surface-200)
+  padding: 0 16px 0 0
+  
 .component-header
   display: flex
   justify-content: right
-  padding-bottom: 5px 
-
-.sidebar
-  outline: red solid 1px
-  position: sticky
-  top: 77px
+  padding-bottom: 5px
+  
+.footer
+  display: flex
+  justify-content: space-between
+  background-color: var(--surface-100)
+  position: fixed
+  padding: 4px
+  width: 100%
+  left: 0
+  bottom: 0
+ 
+.footer-start
+  padding-left: 8px
+  
+.footer-end
+  padding-right: 8px
+  
+.footer-end a
+  padding-right: 8px
+  
+.menubar-end
+  display: flex
+  flex-direction: row
+  gap: 8px
+  
+.theme-switcher
+  align-content: center
+  font-size: 1.3rem
 
 .page
   outline: blue solid 1px
@@ -16,10 +55,14 @@
   overflow: auto
   display: inline-block
   
+.sidebar
+  position: sticky
+  top: 77px
+
 .toolbar
   display: flex
   margin-bottom: 1px
-  background: #fff
+  //background: #fff
   padding: 4px
   border-top-left-radius: 10px
   border-top-right-radius: 10px
