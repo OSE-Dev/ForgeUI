@@ -1,0 +1,10 @@
+﻿<Solution>
+  <Folder Name="/SolutionItems/">
+    <File Path="README.md" />
+    <File Path="LICENSE" />
+    <File Path=".gitignore" />
+    <File Path=".prettierrc.json" />
+  </Folder>
+  <Project Path="Web.Test\Web.Test.csproj" Type="Classic C#" />
+  <Project Path="Web\Web.csproj" Type="Classic C#" />
+</Solution>
