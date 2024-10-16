@@ -1,0 +1,6 @@
+<Project>
+    <PropertyGroup>
+        <!-- Set to true to use the local schema build instead of the published nuget -->
+        <UseLocalDomainProject>true</UseLocalDomainProject>
+    </PropertyGroup>
+</Project>

@@ -52,4 +52,10 @@
       <Folder Include="Tests\" />
     </ItemGroup>
 
+    <ItemGroup Condition="'$(UseLocalDomainProject)' == 'true'">
+      <Reference Include="Domain">
+        <HintPath>..\..\ForgeDomain\Domain\obj\Debug\net8.0\Domain.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
