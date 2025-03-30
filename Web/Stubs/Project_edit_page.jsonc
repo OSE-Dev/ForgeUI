@@ -1,0 +1,33 @@
+{
+  "page": 1,
+  "containers":[
+    {
+      "parent": null, // parent field defined so support relative position change. i.e. if a chapter contains sections, if a chapter moves all the sections within it need to change proportionally
+      "type": 1,
+      "id": 123,
+      "page": 1,
+      "start": 153,
+      "end": 200,
+      "items": [
+        {
+          "type": "gadget",
+          "id":"some uuid",
+          "x": 15, // this is the column offset
+          "y": 10, // these are the line number offsets from the parent container
+          "height": 50,// height in lines
+          "width": 20, // width in columns
+          "x_custom1": 5, // "custom" props to support alternate layouts like japanese (which traditionally has text oriented in columns that are ordered right to left). if they are absent, the default will be used
+          "y_custom1": 10,
+          "height_custom1": 20,
+          "width_custom1": 50
+        }
+      ]
+    },
+    {
+      "parent": 123,
+      "type": "section",
+      "id": 124,
+      "page": 1
+    }
+  ]
+}

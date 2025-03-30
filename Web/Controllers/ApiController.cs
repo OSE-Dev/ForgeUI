@@ -15,6 +15,15 @@ public class ApiController(IWebHostEnvironment webHostEnvironment, ForgeApiServi
     [HttpGet("test")]
     public async Task<string> GetTest()
     {
+        /**
+         * Necessary API's 
+         * upsert card metadata
+         * upsert card content - maybe have a card content mapping table?
+         * publish content
+         * auth crud
+         * load gadgets
+         * load published content
+         */
         return await forgeApiService.GetTest();
     }    
 }

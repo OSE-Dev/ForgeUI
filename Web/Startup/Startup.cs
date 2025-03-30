@@ -43,21 +43,45 @@ public static class Startup
                 Version = "v1"
             }));
 
-        builder.Services.AddHttpClient<ForgeApiService>()
-            .ConfigurePrimaryHttpMessageHandler(options => new HttpClientHandler())
-            .ConfigureHttpClient(options =>
-            {
-                var uriBuilder = new UriBuilder
-                {
-                    Host = "localhost",
-                    Port = 7195,
-                    Scheme = "https"
-                };
 
-                options.BaseAddress = uriBuilder.Uri ;
-                options.DefaultRequestHeaders.Add(
-                    HeaderNames.UserAgent, "ReqsUI");            
-            });
+        if (builder.Environment.IsDevelopment())
+        {
+            builder.Services.AddHttpClient<ForgeApiService>()
+                .ConfigurePrimaryHttpMessageHandler(options => new HttpClientHandler())
+                .ConfigureHttpClient(options =>
+                {
+                    var uriBuilder = new UriBuilder
+                    {
+                        Host = "localhost",
+                        Port = 7195,
+                        Scheme = "https"
+                    };
+
+                    options.BaseAddress = uriBuilder.Uri ;
+                    options.DefaultRequestHeaders.Add(
+                        HeaderNames.UserAgent, "ReqsUI");            
+                });
+        }
+        else
+        {
+            builder.Services.AddHttpClient<ForgeApiService>()
+                .ConfigurePrimaryHttpMessageHandler(options => new HttpClientHandler())
+                .ConfigureHttpClient(options =>
+                {
+                    var uriBuilder = new UriBuilder
+                    {
+                        Host = "localhost",
+                        Port = 7195,
+                        Scheme = "https"
+                    };
+
+                    options.BaseAddress = uriBuilder.Uri ;
+                    options.DefaultRequestHeaders.Add(
+                        HeaderNames.UserAgent, "ReqsUI");            
+                });
+        }
+
+
         builder.Services.ConfigureMediatr();
         builder.Services.AddSpaStaticFiles(configuration =>
         {
