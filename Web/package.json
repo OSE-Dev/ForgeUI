@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "packageManager": "yarn@4.3.0",
+  "packageManager": "yarn@4.8.1",
   "type": "module",
   "workspaces": [
     "Client/packages/**/*"
