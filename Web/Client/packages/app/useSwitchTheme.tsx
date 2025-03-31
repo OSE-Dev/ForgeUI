@@ -9,7 +9,7 @@ function useSwitchTheme() {
     const { changeTheme } = useContext(PrimeReactContext);
     const linkId = "theme-link";
     const switchTheme = (newTheme:string) => {
-        changeTheme(`public/themes/${defaultLightTheme}`, `public/themes/${newTheme}`, linkId, () => {
+        changeTheme!(`public/themes/${defaultLightTheme}`, `public/themes/${newTheme}`, linkId, () => {
             localStorage.setItem('theme', newTheme);
         });
     }
@@ -18,12 +18,12 @@ function useSwitchTheme() {
         if(!savedTheme) {
             const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
             if(prefersDark) {
-                changeTheme(`public/themes/${defaultLightTheme}`, `public/themes/${defaultDarkTheme}`, linkId, () => {});
+                changeTheme!(`public/themes/${defaultLightTheme}`, `public/themes/${defaultDarkTheme}`, linkId, () => {});
             }
             return;
         }
         
-        changeTheme(`public/themes/${defaultLightTheme}`, `public/themes/${theme}`, linkId, () => {});
+        changeTheme!(`public/themes/${defaultLightTheme}`, `public/themes/${theme}`, linkId, () => {});
     };
     return { switchTheme, loadSavedTheme };
 } 

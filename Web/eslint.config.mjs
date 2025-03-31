@@ -16,7 +16,7 @@ const compat = new FlatCompat({
 });
 
 export default [{
-    ignores: ["dist/*"],
+    ignores: ["dist/*","plopfile.js", "playwright-report/*"],
 }, ...fixupConfigRules(compat.extends(
     // "eslint-config-love", // todo: see if necessary & handle
     "plugin:react/recommended",
