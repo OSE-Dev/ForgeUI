@@ -7,7 +7,7 @@ import {ContentEditable} from '@lexical/react/LexicalContentEditable';
 import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
 import {OnChangePlugin} from '@lexical/react/LexicalOnChangePlugin';
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
+import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
 import {RichTextPlugin} from "@lexical/react/LexicalRichTextPlugin";
 import {LinkPlugin} from "@lexical/react/LexicalLinkPlugin";
 import {TablePlugin} from "@lexical/react/LexicalTablePlugin";

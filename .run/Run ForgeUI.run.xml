@@ -6,7 +6,7 @@
       <script value="start" />
     </scripts>
     <node-interpreter value="$USER_HOME$/.nvm/versions/node/v22.2.0/bin/node" />
-    <package-manager value="$PROJECT_DIR$/Web/.yarn/releases/yarn-4.3.0.cjs" />
+    <package-manager value="$PROJECT_DIR$/Web/.yarn/releases/yarn-4.8.1.cjs" />
     <envs />
     <method v="2" />
   </configuration>
