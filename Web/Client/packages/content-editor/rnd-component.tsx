@@ -2,7 +2,12 @@ import React, {useState} from 'react';
 import {Rnd} from "react-rnd";
 import LexicalCard from "../gadgets/lexical/lexical-card";
 
-const RNDComponent = ({id, card, removeCard, setCards}:{id:string, card:CardData, removeCard: (key:string) => void, setCards: ()=>void }) => {
+const RNDComponent = ({id, card, removeCard, updateCard}:
+                      {
+                          id:string, 
+                          card:CardData,
+                          removeCard: (key:string) => void, 
+                          updateCard: (key:string, updatedCard: CardData) => void }) => {
     const [dimensions, setDimensions] = useState({
         width: 400,
         height: 200,
@@ -19,6 +24,9 @@ const RNDComponent = ({id, card, removeCard, setCards}:{id:string, card:CardData
                 // todo: write to store
                 console.log("drag: id:", id, ", x: ", d.x, ", y: ", d.y, " width: ", dimensions.width, ", height: ", dimensions.height);
                 setDimensions({ x: d.x, y: d.y, width: dimensions.width, height: dimensions.height});
+                card.position!.x = d.x;
+                card.position!.y = d.y;
+                updateCard(id,card);
             }}
             onResize={(e, direction, ref, delta, position) => {
                 // todo: write to store
@@ -28,6 +36,9 @@ const RNDComponent = ({id, card, removeCard, setCards}:{id:string, card:CardData
                     height: parseFloat(ref.style.height),
                     ...position,
                 });
+                card.size!.width = dimensions.width;
+                card.size!.height = dimensions.height;
+                updateCard(id,card);
             }}
             className={"rnddemo"}
             resizeGrid={[100,100]}

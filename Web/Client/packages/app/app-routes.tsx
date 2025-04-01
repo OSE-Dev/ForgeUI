@@ -6,6 +6,7 @@ import LexicalDemo from "../gadgets/lexical/lexical-demo";
 import MainLayout from "./main-layout";
 import ReactRndDemo from "../content-editor/react-rnd-demo";
 import Home from "../home-page/home";
+import {ReactRndDemoWrapper} from "@open-source-education/content-editor/react-rnd-demo-wrapper";
 const AppRoutes = (): ReactElement => {
 	return (
 		<>
@@ -15,7 +16,7 @@ const AppRoutes = (): ReactElement => {
                 </Route>
                 <Route path="/app" element={<AppLayout />} >
 					<Route path="lexicaldemo" element={<LexicalDemo />} />
-                    <Route path="reactrnddemo" element={<ReactRndDemo/>}/>
+                    <Route path="reactrnddemo" element={<ReactRndDemoWrapper/>}/>
 					<Route path="*" element={<NoMatch />} />
 				</Route>
 			</Routes>
