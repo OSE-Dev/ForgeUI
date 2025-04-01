@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import Home from './home';
+import About from './index';
 
-const meta: Meta<typeof Home> = {
-    component: Home,
+const meta: Meta<typeof About> = {
+    component: About,
 };
 
 export default meta;
-type Story = StoryObj<typeof Home>;
+type Story = StoryObj<typeof About>;
 
 export const Primary: Story = {
     parameters: {

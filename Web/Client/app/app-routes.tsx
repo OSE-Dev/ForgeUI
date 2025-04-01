@@ -2,17 +2,16 @@ import * as React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 import { type ReactElement } from 'react';
 import AppLayout from './app-layout';
-import LexicalDemo from "../gadgets/lexical/lexical-demo";
+import LexicalDemo from "../packages/gadgets/lexical/lexical-demo";
 import MainLayout from "./main-layout";
-import ReactRndDemo from "../content-editor/react-rnd-demo";
-import Home from "../home-page/home";
+import About from "../pages/about";
 import {ReactRndDemoWrapper} from "@open-source-education/content-editor/react-rnd-demo-wrapper";
 const AppRoutes = (): ReactElement => {
 	return (
 		<>
 			<Routes>
                 <Route path="/" element={<MainLayout />}>
-                    <Route index element={<Home />} />
+                    <Route index element={<About />} />
                 </Route>
                 <Route path="/app" element={<AppLayout />} >
 					<Route path="lexicaldemo" element={<LexicalDemo />} />

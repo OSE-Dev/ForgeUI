@@ -2,11 +2,11 @@ import {ReactElement} from "react";
 import * as React from "react";
 import {FormattedMessage} from "react-intl";
 import { Card } from "primereact/card";
-import wavylines from "./media/wavy_lines.jpeg"
-import wavylines2 from "./media/wavy_lines2.jpeg"
-import wavylines3 from "./media/wavy_lines3.jpeg"
-import wavylines6 from "./media/wavy_lines6.jpeg"
-const Home = (): ReactElement => {
+import wavylines from "./media/wavy_lines.jpeg";
+import wavylines2 from "./media/wavy_lines2.jpeg";
+import wavylines3 from "./media/wavy_lines3.jpeg";
+import wavylines6 from "./media/wavy_lines6.jpeg";
+const About = (): ReactElement => {
     return (
         // todo: if not logged in, give general page. else, redirect to dashboard
         <div className="home-wrapper">
@@ -74,4 +74,4 @@ const Home = (): ReactElement => {
 );
 }
 
-export default Home;
+export default About;

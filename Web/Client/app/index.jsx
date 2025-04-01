@@ -4,7 +4,7 @@ import { App } from './app.tsx';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
-import '../../styles/styles.sass';
+import '../styles/styles.sass';
 
 const container = document.getElementById('app');
 

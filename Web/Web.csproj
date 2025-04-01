@@ -41,13 +41,13 @@
       <_ContentIncludedByDefault Remove="Messages\locales\en\Common.json" />
       <_ContentIncludedByDefault Remove="Messages\locales\fr\Common.json" />
       <_ContentIncludedByDefault Remove="Client\packages\test11\package.json" />
+      <_ContentIncludedByDefault Remove="Client\packages\app\package.json" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Client\packages\app\tests\" />
       <Folder Include="Client\packages\content-editor\tests\" />
       <Folder Include="Client\packages\gadgets\lexical\tests\" />
-      <Folder Include="Client\packages\home-page\tests\" />
+      <Folder Include="Client\pages\" />
       <Folder Include="Public\Themes\" />
       <Folder Include="Tests\" />
     </ItemGroup>

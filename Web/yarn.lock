@@ -2762,24 +2762,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@open-source-education/app@workspace:Client/packages/app":
-  version: 0.0.0-use.local
-  resolution: "@open-source-education/app@workspace:Client/packages/app"
-  dependencies:
-    "@open-source-education/gadget-lexical": "workspace:*"
-    "@types/uuid": "npm:^10.0.0"
-    prop-types: "npm:^15.8.1"
-    react-rnd: "npm:^10.5.2"
-    uuid: "npm:^11.1.0"
-  peerDependencies:
-    primeflex: ^4.0.0
-    primeicons: ^7.0.0
-    primereact: ^10.9.3
-    react: ^19.1.0
-    react-dom: ^19.1.0
-  languageName: unknown
-  linkType: soft
-
 "@open-source-education/content-editor@workspace:Client/packages/content-editor":
   version: 0.0.0-use.local
   resolution: "@open-source-education/content-editor@workspace:Client/packages/content-editor"
@@ -2793,7 +2775,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@open-source-education/gadget-lexical@workspace:*, @open-source-education/gadget-lexical@workspace:Client/packages/gadgets/lexical":
+"@open-source-education/gadget-lexical@workspace:Client/packages/gadgets/lexical":
   version: 0.0.0-use.local
   resolution: "@open-source-education/gadget-lexical@workspace:Client/packages/gadgets/lexical"
   dependencies:
@@ -2811,12 +2793,6 @@ __metadata:
 "@open-source-education/gadgets@workspace:Client/packages/gadgets":
   version: 0.0.0-use.local
   resolution: "@open-source-education/gadgets@workspace:Client/packages/gadgets"
-  languageName: unknown
-  linkType: soft
-
-"@open-source-education/home@workspace:Client/packages/home-page":
-  version: 0.0.0-use.local
-  resolution: "@open-source-education/home@workspace:Client/packages/home-page"
   languageName: unknown
   linkType: soft
 
