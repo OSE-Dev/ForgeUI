@@ -1,5 +1,6 @@
 {
   "name": "@open-source-education/app",
+  "type": "module",
   "dependencies": {
     "@open-source-education/gadget-lexical": "workspace:*",
     "react-rnd": "^10.5.2",

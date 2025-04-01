@@ -1,6 +1,7 @@
 {
   "name": "@open-source-education/web",
   "private": true,
+  "type": "module",
   "workspaces": [
     "Client/packages/**"
   ],

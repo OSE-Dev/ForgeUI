@@ -1,5 +1,6 @@
 {
   "name": "@open-source-education/content-editor",
+  "type": "module",
   "dependencies": {
     "react-rnd": "^10.5.2",
     "uuid": "^11.1.0"

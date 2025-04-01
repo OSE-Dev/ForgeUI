@@ -1,3 +1,4 @@
 {
-  "name": "@open-source-education/home"
+  "name": "@open-source-education/home",
+  "type": "module"
 }
