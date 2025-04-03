@@ -132,17 +132,17 @@ const MenubarEnd = () => {
             url: '/login' //todo: implement login page
         }
     ];
-    const avatarPopupMenu = useRef(null);
-    const devPopupMenu = useRef(null);
+    const avatarPopupMenu = useRef<TieredMenu>(null);
+    const devPopupMenu = useRef<Menu>(null);
     const isLoggedIn = true;
     
     function Contents() {
         if(isLoggedIn) {
             return (
                 <>
-                    <div className="dev-menu" onClick={(event) => devPopupMenu.current.toggle(event)}>Dev</div>
+                    <div className="dev-menu" onClick={(event) => devPopupMenu.current?.toggle(event)}>Dev</div>
                     <Menu popup ref={devPopupMenu} model={devMenuItems}/>
-                    <Avatar icon="pi pi-user" onClick={(event) => avatarPopupMenu.current.toggle(event)}/>
+                    <Avatar icon="pi pi-user" onClick={(event) => avatarPopupMenu.current?.toggle(event)}/>
                     <TieredMenu popup ref={avatarPopupMenu} model={avatarLoggedInItems}/>
                 </>
             )
@@ -150,7 +150,7 @@ const MenubarEnd = () => {
         
         return (
             <>
-                <Avatar icon="pi pi-user" onClick={(event) => avatarPopupMenu.current.toggle(event)}/>
+                <Avatar icon="pi pi-user" onClick={(event) => avatarPopupMenu.current?.toggle(event)}/>
                 <TieredMenu popup ref={avatarPopupMenu} model={avatarLoggedOutItems}/>
             </>
         )
