@@ -26,7 +26,7 @@ export default function (plop) {
       {
         type: 'append',
         path: './Client/styles/styles.sass',
-        template: '@use \'packages/{{name}}\' as {{name}}',
+        template: '@use \'../packages/{{name}}\' as {{name}}',
       },
     ],
   }),
@@ -40,7 +40,7 @@ export default function (plop) {
     actions: [
       {
         type: 'add',
-        path: './Client/packages/gadgets/{{name}}/_{{name}}.sass',
+        path: './Client/packages/gadgets/{{name}}/_.sass',
       },
       {
         type: 'addMany',
@@ -57,7 +57,7 @@ export default function (plop) {
       {
         type: 'append',
         path: './Client/styles/styles.sass',
-        template: '@use \'packages/{{name}}\' as {{name}}',
+        template: '@use \'../packages/{{name}}/_\' as {{name}}',
       },
     ],
   })

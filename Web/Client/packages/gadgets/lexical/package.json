@@ -1,5 +1,6 @@
 {
   "name": "@open-source-education/gadget-lexical",
+  "version": "0.1.0",
   "dependencies": {
     "@lexical/react": "^0.29.0",
     "@lexical/utils": "^0.29.0",

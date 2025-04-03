@@ -10,7 +10,7 @@ const MainLayout = (): React.ReactElement => {
     const { loadSavedTheme } = useSwitchTheme();
     useEffect(()=>{
         loadSavedTheme();
-    },[])
+    },[loadSavedTheme])
     return (
         <>
             <Menubar end={<MenubarEnd/>}/>

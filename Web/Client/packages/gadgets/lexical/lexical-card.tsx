@@ -17,7 +17,7 @@ import {TabIndentationPlugin} from "@lexical/react/LexicalTabIndentationPlugin";
 import {AutoLinkPlugin} from "@lexical/react/LexicalAutoLinkPlugin";
 import {ClearEditorPlugin} from "@lexical/react/LexicalClearEditorPlugin";
 import {MarkdownShortcutPlugin} from "@lexical/react/LexicalMarkdownShortcutPlugin";
-import LexicalTableOfContentsPlugin from "@lexical/react/LexicalTableOfContents";
+import {TableOfContentsPlugin} from "@lexical/react/LexicalTableOfContentsPlugin";
 import {AutoLinkNode, LinkNode} from '@lexical/link';
 import {ListItemNode, ListNode} from '@lexical/list';
 import ToolbarPlugin from './toolbar-plugin'

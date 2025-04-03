@@ -1,3 +1,5 @@
+import { CardData } from "common";
+
 const useCardController = () =>{
     const saveCards = (cards: CardData[]) => {
         

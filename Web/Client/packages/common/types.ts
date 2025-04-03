@@ -1,4 +1,4 @@
-type CardData = {
+export type CardData = {
     id:string,
     key:string,
     content:string, //todo: content needs to be extracted and support other types

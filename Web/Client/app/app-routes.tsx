@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Routes, Route, Outlet, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { type ReactElement } from 'react';
 import AppLayout from './app-layout';
 import LexicalDemo from "../packages/gadgets/lexical/lexical-demo";

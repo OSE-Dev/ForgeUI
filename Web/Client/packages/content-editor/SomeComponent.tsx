@@ -1,5 +1,4 @@
 import {useSomeContext} from "./SomeContext";
-import Button from "primereact/button";
 import {SelectButton} from "primereact/selectbutton";
 import React from "react";
 

@@ -11,7 +11,7 @@ const AppLayout = (): React.ReactElement => {
     const { loadSavedTheme } = useSwitchTheme();
     useEffect(()=>{
         loadSavedTheme();
-    },[])
+    },[loadSavedTheme])
     
     const modelItems = [
         {

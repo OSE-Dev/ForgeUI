@@ -2,7 +2,7 @@ import * as React from "react";
 import {Button} from "primereact/button";
 
 type Props = {
-    addCard: Function
+    addCard: () => void
 }
 const Toolbox = ({addCard = () => {}}: Props) =>{
     function onClick (){

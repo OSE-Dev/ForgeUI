@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Rnd} from "react-rnd";
 import LexicalCard from "../gadgets/lexical/lexical-card";
+import {CardData} from "common";
 
 const RNDComponent = ({id, card, removeCard, updateCard}:
                       {

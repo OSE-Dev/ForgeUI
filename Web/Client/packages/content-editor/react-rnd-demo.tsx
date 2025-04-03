@@ -1,11 +1,12 @@
-import React, {use, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {v4 as uuidv4} from "uuid";
 import Toolbox from "./toolbox";
 import RNDComponent from "./rnd-component";
 import useCardController from "./useCardController";
-import {SomeContext, SomeContextProvider, useSomeContext} from "./SomeContext";
+import {useSomeContext} from "./SomeContext";
 import {SomeComponent} from "./SomeComponent";
 import {SelectButton} from "primereact/selectbutton";
+import { CardData } from "common";
 
 const ReactRndDemo = () => {
     const [cards, setCards] = useState<CardData[]>([]);
