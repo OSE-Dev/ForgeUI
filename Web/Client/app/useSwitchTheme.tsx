@@ -1,4 +1,4 @@
-import {use, useLayoutEffect, useState} from 'react';
+import {use, useState} from 'react';
 import { PrimeReactContext } from 'primereact/api';
 import {MD_DARK_INDIGO, MD_LIGHT_INDIGO} from "./constants";
 function useSwitchTheme() {

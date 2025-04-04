@@ -31,37 +31,37 @@ const MenubarEnd = () => {
             label: "Themes",
             icon: 'pi pi-sparkles',
             items: [
-                // {
-                //     label: ARYA_BLUE.label,
-                //     command: () => { useSwitchTheme(ARYA_BLUE.value)}     
-                // },
-                // {
-                //     label: ARYA_GREEN.label,
-                //     command: () => { useSwitchTheme(ARYA_GREEN.value)}
-                // },         {
-                //     label: ARYA_ORANGE.label,
-                //     command: () => { useSwitchTheme(ARYA_ORANGE.value)}
-                // },                      
-                // {
-                //     label: ARYA_PURPLE.label,
-                //     command: () => { useSwitchTheme(ARYA_PURPLE.value)}
-                // },
-                // {
-                //     label: BOOTSTRAP4_DARK_BLUE.label,
-                //     command: () => { useSwitchTheme(BOOTSTRAP4_DARK_BLUE.value)}
-                // },                
-                // {
-                //     label: BOOTSTRAP4_DARK_PURPLE.label,
-                //     command: () => { useSwitchTheme(BOOTSTRAP4_DARK_PURPLE.value)}
-                // },                
-                // {
-                //     label: BOOTSTRAP4_LIGHT_BLUE.label,
-                //     command: () => { useSwitchTheme(BOOTSTRAP4_LIGHT_BLUE.value)}
-                // },                
-                // {
-                //     label: BOOTSTRAP4_LIGHT_PURPLE.label,
-                //     command: () => { useSwitchTheme(BOOTSTRAP4_LIGHT_PURPLE.value)}
-                // },
+                {
+                    label: ARYA_BLUE.label,
+                    command: () => { switchTheme(ARYA_BLUE.value)}     
+                },
+                {
+                    label: ARYA_GREEN.label,
+                    command: () => { switchTheme(ARYA_GREEN.value)}
+                },         {
+                    label: ARYA_ORANGE.label,
+                    command: () => { switchTheme(ARYA_ORANGE.value)}
+                },                      
+                {
+                    label: ARYA_PURPLE.label,
+                    command: () => { switchTheme(ARYA_PURPLE.value)}
+                },
+                {
+                    label: BOOTSTRAP4_DARK_BLUE.label,
+                    command: () => { switchTheme(BOOTSTRAP4_DARK_BLUE.value)}
+                },                
+                {
+                    label: BOOTSTRAP4_DARK_PURPLE.label,
+                    command: () => { switchTheme(BOOTSTRAP4_DARK_PURPLE.value)}
+                },                
+                {
+                    label: BOOTSTRAP4_LIGHT_BLUE.label,
+                    command: () => { switchTheme(BOOTSTRAP4_LIGHT_BLUE.value)}
+                },                
+                {
+                    label: BOOTSTRAP4_LIGHT_PURPLE.label,
+                    command: () => { switchTheme(BOOTSTRAP4_LIGHT_PURPLE.value)}
+                },
                 {
                     label: MD_LIGHT_INDIGO.label,
                     command: () => { switchTheme(MD_LIGHT_INDIGO.value)}
@@ -84,37 +84,37 @@ const MenubarEnd = () => {
             label: "Themes",
             icon: 'pi pi-sparkles',
             items: [
-                // {
-                //     label: ARYA_BLUE.label,
-                //     command: () => { useSwitchTheme(ARYA_BLUE.value)}     
-                // },
-                // {
-                //     label: ARYA_GREEN.label,
-                //     command: () => { useSwitchTheme(ARYA_GREEN.value)}
-                // },         {
-                //     label: ARYA_ORANGE.label,
-                //     command: () => { useSwitchTheme(ARYA_ORANGE.value)}
-                // },                      
-                // {
-                //     label: ARYA_PURPLE.label,
-                //     command: () => { useSwitchTheme(ARYA_PURPLE.value)}
-                // },
-                // {
-                //     label: BOOTSTRAP4_DARK_BLUE.label,
-                //     command: () => { useSwitchTheme(BOOTSTRAP4_DARK_BLUE.value)}
-                // },                
-                // {
-                //     label: BOOTSTRAP4_DARK_PURPLE.label,
-                //     command: () => { useSwitchTheme(BOOTSTRAP4_DARK_PURPLE.value)}
-                // },                
-                // {
-                //     label: BOOTSTRAP4_LIGHT_BLUE.label,
-                //     command: () => { useSwitchTheme(BOOTSTRAP4_LIGHT_BLUE.value)}
-                // },                
-                // {
-                //     label: BOOTSTRAP4_LIGHT_PURPLE.label,
-                //     command: () => { useSwitchTheme(BOOTSTRAP4_LIGHT_PURPLE.value)}
-                // },
+                {
+                    label: ARYA_BLUE.label,
+                    command: () => { switchTheme(ARYA_BLUE.value)}     
+                },
+                {
+                    label: ARYA_GREEN.label,
+                    command: () => { switchTheme(ARYA_GREEN.value)}
+                },         {
+                    label: ARYA_ORANGE.label,
+                    command: () => { switchTheme(ARYA_ORANGE.value)}
+                },                      
+                {
+                    label: ARYA_PURPLE.label,
+                    command: () => { switchTheme(ARYA_PURPLE.value)}
+                },
+                {
+                    label: BOOTSTRAP4_DARK_BLUE.label,
+                    command: () => { switchTheme(BOOTSTRAP4_DARK_BLUE.value)}
+                },                
+                {
+                    label: BOOTSTRAP4_DARK_PURPLE.label,
+                    command: () => { switchTheme(BOOTSTRAP4_DARK_PURPLE.value)}
+                },                
+                {
+                    label: BOOTSTRAP4_LIGHT_BLUE.label,
+                    command: () => { switchTheme(BOOTSTRAP4_LIGHT_BLUE.value)}
+                },                
+                {
+                    label: BOOTSTRAP4_LIGHT_PURPLE.label,
+                    command: () => { switchTheme(BOOTSTRAP4_LIGHT_PURPLE.value)}
+                },
                 {
                     label: MD_LIGHT_INDIGO.label,
                     command: () => { switchTheme(MD_LIGHT_INDIGO.value)}

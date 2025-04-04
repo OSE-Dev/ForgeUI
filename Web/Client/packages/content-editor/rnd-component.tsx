@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Rnd} from "react-rnd";
 import LexicalCard from "../gadgets/lexical/lexical-card";
 import {CardData} from "common";
+import {DEFAULT_HEIGHT, DEFAULT_WIDTH, DEFAULT_X, DEFAULT_Y} from "./constants";
 
 const RNDComponent = ({id, card, removeCard, updateCard}:
                       {
@@ -9,24 +10,21 @@ const RNDComponent = ({id, card, removeCard, updateCard}:
                           card:CardData,
                           removeCard: (key:string) => void, 
                           updateCard: (key:string, updatedCard: CardData) => void }) => {
-    const defaultWidth = 400;
-    const defaultHeight = 200;
-    const defaultX = 10;
-    const defaultY = 10;
+
     const [dimensions, setDimensions] = useState({
-        width: defaultWidth,
-        height: defaultHeight,
-        x: defaultX,
-        y: defaultY,
+        width: DEFAULT_WIDTH,
+        height: DEFAULT_HEIGHT,
+        x: DEFAULT_X,
+        y: DEFAULT_Y,
     });
     
     useEffect(() => {
         if (card) {
             setDimensions({
-                x: card?.position?.x ?? defaultX,
-                y: card?.position?.y ?? defaultY,
-                width: card?.size?.width ?? defaultWidth,
-                height: card?.size?.height ?? defaultHeight
+                x: card?.position?.x ?? DEFAULT_X,
+                y: card?.position?.y ?? DEFAULT_Y,
+                width: card?.size?.width ?? DEFAULT_WIDTH,
+                height: card?.size?.height ?? DEFAULT_HEIGHT
             });
         }
     },[card]);
