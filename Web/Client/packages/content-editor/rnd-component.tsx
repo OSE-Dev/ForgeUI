@@ -34,7 +34,6 @@ const RNDComponent = ({id, card, removeCard, updateCard}:
             size={{ width: dimensions.width, height: dimensions.height }}
             position={{ x: dimensions.x, y: dimensions.y }}
             onDragStop={(e, d) => {
-                // todo: write to store
                 console.log("drag: id:", id, ", x: ", d.x, ", y: ", d.y, " width: ", dimensions.width, ", height: ", dimensions.height);
                 setDimensions({ x: d.x, y: d.y, width: dimensions.width, height: dimensions.height});
                 card.position!.x = d.x;
@@ -42,7 +41,6 @@ const RNDComponent = ({id, card, removeCard, updateCard}:
                 updateCard(id,card);
             }}
             onResize={(e, direction, ref, delta, position) => {
-                // todo: write to store
                 console.log("resize:", direction, ref, delta, position);
                 setDimensions({
                     width: parseFloat(ref.style.width),
