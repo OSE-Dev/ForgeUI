@@ -2,14 +2,15 @@ import React, {useEffect, useState} from 'react';
 import {v4 as uuidv4} from "uuid";
 import Toolbox from "./toolbox";
 import RNDComponent from "./rnd-component";
-import useCardController from "./useCardController";
+import useCardController from "./controllers/useCardController";
 import {useSomeContext} from "./SomeContext";
 import {SomeComponent} from "./SomeComponent";
 import {SelectButton} from "primereact/selectbutton";
 import { CardData } from "common";
+import {useCardContext} from "./CardContext";
 
 const ReactRndDemo = () => {
-    const [cards, setCards] = useState<CardData[]>([]);
+    const { cards, setCards } = useCardContext();
     const {saveCards} = useCardController();
     useEffect(() => {
         loadCards();
@@ -22,7 +23,7 @@ const ReactRndDemo = () => {
         }, 1000);
         
         return () => clearInterval(intervalId);
-    }, []);
+    }, [cards]);
     
     const loadCards = () => {
       const storedCards = localStorage.getItem("cards");
@@ -31,17 +32,17 @@ const ReactRndDemo = () => {
     };
     
     function removeCard(key : string){
-        const filteredCards = cards.filter(x => x.key != key);
+        const filteredCards = cards?.filter(x => x.key != key) ?? null;
         setCards(filteredCards);
     }
 
     function addCard(){
         const newCard : CardData= {id: uuidv4(), key: uuidv4(), content:"", position: {x: 12, y:200}, size: {height: 200, width: 400}};
-        setCards([...cards, newCard]);
+        setCards([...(cards ?? []), newCard]);
     }
     
     function updateCard(key: string, updatedCard: CardData){
-        setCards(cards.map((item: CardData) => item.key === key ? updatedCard : item));
+        setCards(cards?.map((item: CardData) => item.key === key ? updatedCard : item) ?? null);
         saveCards(cards);
     }
     const {value, setValue} = useSomeContext();
@@ -76,7 +77,7 @@ const ReactRndDemo = () => {
               </SelectButton>
           </div>
           <div>
-              {cards.map((card : CardData) => (
+              {cards?.map((card : CardData) => (
                 <RNDComponent key={card.key} id={card.key} card={card} removeCard={removeCard} updateCard={updateCard}/>
               ))}
           </div>

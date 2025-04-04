@@ -1,8 +1,7 @@
 import { CardData } from "common";
 
 const useCardController = () =>{
-    const saveCards = (cards: CardData[]) => {
-        
+    const saveCards = (cards: CardData[] | null) => {
         localStorage.setItem("cards", JSON.stringify(cards));
     };
     

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Rnd} from "react-rnd";
 import LexicalCard from "../gadgets/lexical/lexical-card";
 import {CardData} from "common";
@@ -9,13 +9,27 @@ const RNDComponent = ({id, card, removeCard, updateCard}:
                           card:CardData,
                           removeCard: (key:string) => void, 
                           updateCard: (key:string, updatedCard: CardData) => void }) => {
+    const defaultWidth = 400;
+    const defaultHeight = 200;
+    const defaultX = 10;
+    const defaultY = 10;
     const [dimensions, setDimensions] = useState({
-        width: 400,
-        height: 200,
-        x: 10,
-        y: 10,
+        width: defaultWidth,
+        height: defaultHeight,
+        x: defaultX,
+        y: defaultY,
     });
-    // todo: load dimensions and position from store if present
+    
+    useEffect(() => {
+        if (card) {
+            setDimensions({
+                x: card?.position?.x ?? defaultX,
+                y: card?.position?.y ?? defaultY,
+                width: card?.size?.width ?? defaultWidth,
+                height: card?.size?.height ?? defaultHeight
+            });
+        }
+    },[card]);
 
     return (
         <Rnd
