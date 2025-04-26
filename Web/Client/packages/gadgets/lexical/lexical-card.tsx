@@ -23,6 +23,19 @@ import {ListItemNode, ListNode} from '@lexical/list';
 import ToolbarPlugin from './toolbar-plugin'
 import {AutoFocusPlugin} from "@lexical/react/LexicalAutoFocusPlugin";
 import { Card } from "primereact/card";
+import {
+    $isTextNode,
+    DOMConversionMap,
+    DOMExportOutput,
+    DOMExportOutputMap,
+    isHTMLElement,
+    Klass,
+    LexicalEditor,
+    LexicalNode,
+    ParagraphNode,
+    TextNode,
+} from 'lexical';
+import defaultTheme from "./lexical-default-theme";
 
 type Props = {
     key: string;
@@ -32,9 +45,6 @@ type Props = {
 }
 
 const LexicalCard = ({props, removeCard, className, style = {}, children, ...otherProps}: {props:Props, removeCard:(key:string)=>void, className?: string, key?: string, style?: {[x:string] : string}, children?: React.ReactNode[] }) => {
-    const theme = {
-    }
-
     // Catch any errors that occur during Lexical updates and log them
     // or throw them as needed. If you don't throw them, Lexical will
     // try to recover gracefully without losing user data.
@@ -45,9 +55,9 @@ const LexicalCard = ({props, removeCard, className, style = {}, children, ...oth
 
     const initialConfig = {
         namespace: 'MyEditor',
-        theme,
+        theme: defaultTheme,
         onError,
-        nodes: []
+        nodes: [ParagraphNode, TextNode]
         // nodes: [AutoLinkNode, ListNode, ListItemNode]
     };
 
