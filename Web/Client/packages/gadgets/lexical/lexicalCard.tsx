@@ -1,5 +1,5 @@
 import {$getRoot, $getSelection, EditorState} from 'lexical';
-import React, {useEffect, useState} from 'react';
+import React, {PropsWithChildren, useEffect, useState} from 'react';
 
 import {LexicalComposer} from '@lexical/react/LexicalComposer';
 import {PlainTextPlugin} from '@lexical/react/LexicalPlainTextPlugin';
@@ -20,7 +20,7 @@ import {MarkdownShortcutPlugin} from "@lexical/react/LexicalMarkdownShortcutPlug
 import {TableOfContentsPlugin} from "@lexical/react/LexicalTableOfContentsPlugin";
 import {AutoLinkNode, LinkNode} from '@lexical/link';
 import {ListItemNode, ListNode} from '@lexical/list';
-import ToolbarPlugin from './toolbar-plugin'
+import ToolbarPlugin from './toolbarPlugin'
 import {AutoFocusPlugin} from "@lexical/react/LexicalAutoFocusPlugin";
 import { Card } from "primereact/card";
 import {
@@ -35,16 +35,20 @@ import {
     ParagraphNode,
     TextNode,
 } from 'lexical';
-import defaultTheme from "./lexical-default-theme";
+import defaultTheme from "./lexicalDefaultTheme";
+import {CardProps} from "common/types";
 
-type Props = {
+type LexicalCardProps = {
     key: string;
     id: string;
     content:string;
     height?:string;
+    removeCard?: (key:string) =>void;
+    
 }
 
-const LexicalCard = ({props, removeCard, className, style = {}, children, ...otherProps}: {props:Props, removeCard:(key:string)=>void, className?: string, key?: string, style?: {[x:string] : string}, children?: React.ReactNode[] }) => {
+const LexicalCard = ( {props}: {props: PropsWithChildren<CardProps>}) => {
+    const { removeCard, size } = props;
     // Catch any errors that occur during Lexical updates and log them
     // or throw them as needed. If you don't throw them, Lexical will
     // try to recover gracefully without losing user data.
@@ -95,14 +99,14 @@ const LexicalCard = ({props, removeCard, className, style = {}, children, ...oth
         {/*<div {...otherProps} style={{...style}} className={`lexical-card-container lexical-card ${className}`} id={props?.id} >*/}
             <div className={"component-header"}>
                 {/*<span className={"pi pi-arrows-alt drag-handle"} ></span>*/}
-                <button onClick={() => removeCard(props.key)}>
+                <button onClick={() => removeCard!!(props.key)}>
                     <span className={"pi pi-trash"}></span>
                 </button>
             </div>
             <LexicalComposer initialConfig={initialConfig}>
                 <div className="editor-container">
                     <ToolbarPlugin />
-                    <div className="editor-inner" style={{height: props.height}}>
+                    <div className="editor-inner" style={{height: size?.height}}>
                         <RichTextPlugin
                             contentEditable={<ContentEditable className={"editor-input"}/>}
                             placeholder={<div className={"editor-placeholder"}>Enter some text...</div>}

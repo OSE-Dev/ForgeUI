@@ -1,16 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import {Rnd} from "react-rnd";
-import LexicalCard from "../gadgets/lexical/lexical-card";
 import {CardData} from "common";
 import {DEFAULT_HEIGHT, DEFAULT_WIDTH, DEFAULT_X, DEFAULT_Y} from "./constants";
+import {useComponentFactory} from "../component-factory";
 
-const RNDComponent = ({id, card, removeCard, updateCard}:
-                      {
-                          id:string, 
-                          card:CardData,
-                          removeCard: (key:string) => void, 
-                          updateCard: (key:string, updatedCard: CardData) => void }) => {
+type DraggableCardProps = {
+    id: string,
+    card: CardData,
+    removeCard: (key: string) => void,
+    updateCard: (key: string, updatedCard: CardData) => void,
+}
 
+const DraggableCard = (props: DraggableCardProps) => {
+    const { id, card, removeCard, updateCard} = props;
+    const { createComponent } = useComponentFactory();
+    
+    const cardComponent = createComponent(card);
+    
     const [dimensions, setDimensions] = useState({
         width: DEFAULT_WIDTH,
         height: DEFAULT_HEIGHT,
@@ -52,12 +58,12 @@ const RNDComponent = ({id, card, removeCard, updateCard}:
                 updateCard(id,card);
             }}
             className={"rnddemo"}
-            resizeGrid={[100,100]}
-            dragGrid={[100,100]}
+            resizeGrid={[100,100]} //todo: make this dynamic
+            dragGrid={[100,100]}    // todo: make this dynamic
         >
-            <LexicalCard props={{id:card.id, key:card.key, content:"", height:dimensions.height-90+"px"}} removeCard={removeCard}/>
+            {cardComponent}
         </Rnd>
     );
 }
 
-export default RNDComponent
+export default DraggableCard

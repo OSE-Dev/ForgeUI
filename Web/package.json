@@ -25,7 +25,8 @@
     "e2e:ui": "playwright test --ui",
     "syncpack:fix-mismatches": "syncpack fix-mismatches",
     "syncpack:lint": "syncpack lint",
-    "syncpack:update": "syncpack update"
+    "syncpack:update": "syncpack update",
+    "clear:vite": "rm -rf node_modules/.vite"
   },
   "dependencies": {
     "@lexical/react": "^0.29.0",

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import ReactRndDemo from './react-rnd-demo';
+import ReactRndDemo from './reactRndDemo';
 
 const meta: Meta<typeof ReactRndDemo> = {
     component: ReactRndDemo,

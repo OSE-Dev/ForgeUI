@@ -1,6 +1,6 @@
 import React from "react";
-import ReactRndDemo from "./react-rnd-demo";
-import {CardContextProvider} from "./CardContext";
+import ReactRndDemo from "./reactRndDemo";
+import {CardContextProvider} from "./cardContext";
 
 export const ReactRndDemoWrapper = () =>{
   return (

@@ -1,1 +1,1 @@
-export * from "./lexical-card";
+export * from "./lexicalCard";

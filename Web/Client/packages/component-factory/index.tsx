@@ -1,0 +1,1 @@
+export {useComponentFactory} from "./useComponentFactory";

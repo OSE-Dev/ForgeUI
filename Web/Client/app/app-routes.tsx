@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { type ReactElement } from 'react';
 import AppLayout from './app-layout';
-import LexicalDemo from "../packages/gadgets/lexical/lexical-demo";
+import LexicalDemo from "@open-source-education/gadget-lexical/lexicalDemo";
 import MainLayout from "./main-layout";
 import About from "../pages/about";
-import {ReactRndDemoWrapper} from "@open-source-education/content-editor/react-rnd-demo-wrapper";
+import {ReactRndDemoWrapper} from "@open-source-education/content-editor/reactRndDemoWrapper";
 const AppRoutes = (): ReactElement => {
 	return (
 		<>
